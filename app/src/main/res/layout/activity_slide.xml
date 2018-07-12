@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="25dp"
+    android:paddingRight="85dp"
+    android:paddingTop="75dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout">
+
+        <ImageView
+            android:id="@+id/slidemenu_avatar"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/head_portrait" />
+
+        <TextView
+            android:id="@+id/slidemenu_qqnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/slidemenu_avatar"
+            android:text="全联盟最骚的骚猪~"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/gender"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/slidemenu_qqnumber"
+            android:layout_marginEnd="27dp"
+            android:src="@drawable/women" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/slidemenu_avatar"
+            android:layout_marginTop="12dp"
+            android:text="点击编辑个性签名"
+            android:textColor="#bb000000"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="23dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/my_concern"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/my_concern"
+                android:layout_centerVertical="true"
+                android:id="@+id/my_concern_img" />
+
+            <TextView
+                android:id="@+id/my_concern_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@+id/my_concern_img"
+                android:text="我的关注" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/go"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/message_notification"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/message_notification"
+                android:layout_centerVertical="true"
+                android:id="@+id/message_img" />
+
+            <TextView
+                android:id="@+id/message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@+id/message_img"
+                android:text="我的收藏" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/go"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_for_friends"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/search_for_friends"
+                android:layout_centerVertical="true"
+                android:id="@+id/search_for_friends_img" />
+
+            <TextView
+                android:id="@+id/search_for_friends_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@+id/search_for_friends_img"
+                android:text="搜索好友" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/go"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_collection"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/my_collection"
+                android:layout_centerVertical="true"
+                android:id="@+id/my_collection_img" />
+
+            <TextView
+                android:id="@+id/my_collection_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@+id/my_collection_img"
+                android:text="消息通知" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/go"/>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="设置"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="80dp"
+            android:text="夜间"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+</RelativeLayout>
