@@ -3,21 +3,19 @@ package com.example.wwg.view.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.wwg.R;
 import com.example.wwg.view.myview.DragViewGroup;
+import com.kyleduo.switchbutton.SwitchButton;
 
 public class MainActivity extends Activity {
-
-    private String[] menuStr = {"开通会员", "QQ钱包", "个性装扮", "我的收藏", "我的相册", "我的文件"};
-    private ArrayAdapter adapter;
     private DragViewGroup dragViewGroup;
 
     private Context context;
+    private SwitchButton sb_ios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +29,6 @@ public class MainActivity extends Activity {
     private void initView() {
         dragViewGroup = (DragViewGroup) findViewById(R.id.main_dragview);
         View slideView = dragViewGroup.getSlideView();
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuStr);
-
     }
 
     private void initViewByJava() {
@@ -43,23 +39,30 @@ public class MainActivity extends Activity {
         dragViewGroup.setCloseRangePercent(0.5f);
         dragViewGroup.setSlideOpenSpeed(0.8f);
         View slideView = dragViewGroup.getSlideView();
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, menuStr);
+        sb_ios = (SwitchButton)slideView.findViewById(R.id.sb_ios);
+        sb_ios.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //
         dragViewGroup.setOnDraggingListener(new DragViewGroup.OnDraggingListener() {
             @Override
             public void onOpen() {
-                Toast.makeText(context, "open", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "open", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClose() {
-                Toast.makeText(context, "close", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "close", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDragging(float percent) {
-                Log.v("onDragging", "" + percent);
+//                Log.v("onDragging", "" + percent);
             }
         });
     }

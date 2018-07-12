@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="25dp"
@@ -180,6 +181,46 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/go"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/night"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/night_unopen"
+                android:layout_centerVertical="true"
+                android:id="@+id/night_img" />
+
+            <TextView
+                android:id="@+id/night_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:layout_toEndOf="@+id/night_img"
+                android:text="夜间模式" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:id="@+id/sb_ios"
+                style="@style/SwitchButtonStyle"
+                android:layout_width="65dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:kswAnimationDuration="300"
+                app:kswBackDrawable="@drawable/ios_back_drawable"
+                app:kswThumbDrawable="@drawable/ios_thumb_selector"
+                app:kswThumbMarginBottom="-7dp"
+                app:kswThumbMarginLeft="-5dp"
+                app:kswThumbMarginRight="-5dp"
+                app:kswThumbMarginTop="-2.5dp"
+                app:kswThumbRangeRatio="1.4" />
 
         </RelativeLayout>
 
