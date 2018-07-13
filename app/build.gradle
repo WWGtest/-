@@ -37,6 +37,8 @@ dependencies {
     compile 'org.litepal.android:core:1.4.1'
     //非常好用的开关按钮
     implementation 'com.kyleduo.switchbutton:library:2.0.0'
+    //腾讯bugly自动集成
+    compile 'com.tencent.bugly:crashreport:latest.release'
 
 }
 
