@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <!--形状定义工具-->
+        <shape>
+            <!--设置形状填充的颜色，只有android:color一个属性-->
+            <solid android:color="#FFF" />
+            <padding
+                android:bottom="12dp"
+                android:left="12dp"
+                android:right="12dp"
+                android:top="12dp" />
+        </shape>
+    </item>
+
+
+    <item>
+        <shape>
+            <solid android:color="#fff" />
+            <padding
+                android:bottom="12dp"
+                android:left="12dp"
+                android:right="12dp"
+                android:top="12dp" />
+        </shape>
+    </item>
+</selector>
