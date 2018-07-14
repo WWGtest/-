@@ -18,6 +18,7 @@ import com.example.wwg.view.fragment.Fragment_Article;
 import com.example.wwg.view.fragment.Fragment_Recommend;
 import com.example.wwg.view.fragment.Fragment_Video;
 import com.example.wwg.view.myview.DragViewGroup;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.kyleduo.switchbutton.SwitchButton;
 
 public class MainActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
@@ -34,6 +35,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     private Fragment_Article fragment_article;
     private Fragment_Video fragment_video;
     private RadioGroup bottom_radioGroup;
+    private SimpleDraweeView user_title_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,9 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     private void initView() {
         dragViewGroup = (DragViewGroup) findViewById(R.id.main_dragview);
         View slideView = dragViewGroup.getSlideView();
+
+        //首页用户头像
+        user_title_img = findViewById(R.id.user_title_img);
 
         //初始化fragment
         fragment_recommend = new Fragment_Recommend();
@@ -99,6 +104,14 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
             @Override
             public void onDragging(float percent) {
 //                Log.v("onDragging", "" + percent);
+            }
+        });
+        //用户头像点击监听
+        user_title_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //打开侧边栏
+                dragViewGroup.open();
             }
         });
     }
