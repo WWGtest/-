@@ -39,6 +39,8 @@ dependencies {
     implementation 'com.kyleduo.switchbutton:library:2.0.0'
     //腾讯bugly自动集成
     compile 'com.tencent.bugly:crashreport:latest.release'
+    //顶部导航栏
+    implementation 'com.android.support:design:26.1.0'
 
 }
 

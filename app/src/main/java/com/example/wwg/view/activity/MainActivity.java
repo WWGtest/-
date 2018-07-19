@@ -1,12 +1,12 @@
 package com.example.wwg.view.activity;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
@@ -14,14 +14,15 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.wwg.R;
-import com.example.wwg.view.fragment.Fragment_Article;
-import com.example.wwg.view.fragment.Fragment_Recommend;
-import com.example.wwg.view.fragment.Fragment_Video;
+import com.example.wwg.base.BaseActivity;
+import com.example.wwg.view.fragment.article.Fragment_Article;
+import com.example.wwg.view.fragment.recommend.Fragment_Recommend;
+import com.example.wwg.view.fragment.video.Fragment_Video;
 import com.example.wwg.view.myview.DragViewGroup;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.kyleduo.switchbutton.SwitchButton;
 
-public class MainActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
     private DragViewGroup dragViewGroup;
 
     private Context context;
@@ -36,13 +37,14 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     private Fragment_Video fragment_video;
     private RadioGroup bottom_radioGroup;
     private SimpleDraweeView user_title_img;
+    private boolean isSlideViewOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
-        fragmentManager = this.getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         initView();
         initViewByJava();
         initRadioButtonImageSize();
@@ -110,8 +112,17 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
         user_title_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //打开侧边栏
-                dragViewGroup.open();
+                if (!isSlideViewOpen){
+                    //设置侧拉栏当前状态为开启状态
+                    isSlideViewOpen = true;
+                    //打开侧边栏
+                    dragViewGroup.open();
+                }else {
+                    //设置侧拉栏当前状态为关闭状态
+                    isSlideViewOpen = false;
+                    //关闭侧边栏
+                    dragViewGroup.close();
+                }
             }
         });
     }
@@ -167,6 +178,19 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
             } else {
                 transaction.show(fragment).commit();
             }
+        }
+    }
+
+    //设置返回键点击时的时间触发
+    @Override
+    public void onBackPressed() {
+        if (isSlideViewOpen){
+            //设置侧拉栏当前状态为关闭状态
+            isSlideViewOpen = false;
+            //关闭侧边栏
+            dragViewGroup.close();
+        }else {
+            super.onBackPressed();
         }
     }
 

@@ -296,7 +296,12 @@ public class DragViewGroup extends FrameLayout {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         //重写该Layout的触摸拦截事件，将其交给ViewDragHelper处理
         //可以加上手势的onTouchEvent判断返回，这样可以重写MainView的onTouch事件
-        return dragHelper.shouldInterceptTouchEvent(ev);
+        //设置禁止滑动
+        if (ev.getAction()==MotionEvent.ACTION_MOVE){
+            return false;
+        }else {
+            return dragHelper.shouldInterceptTouchEvent(ev);
+        }
     }
 
     @Override
