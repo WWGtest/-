@@ -28,19 +28,21 @@ dependencies {
     //recyclerview
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     //okHttp依赖
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
     // fresco依赖
-    compile 'com.facebook.fresco:fresco:0.12.0'
+    implementation 'com.facebook.fresco:fresco:0.12.0'
     //解决fresco和okhttp依赖冲突的问题
-    compile 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0+'
+    implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0+'
     //LitePal数据库
-    compile 'org.litepal.android:core:1.4.1'
+    implementation 'org.litepal.android:core:1.4.1'
     //非常好用的开关按钮
     implementation 'com.kyleduo.switchbutton:library:2.0.0'
     //腾讯bugly自动集成
-    compile 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:crashreport:latest.release'
     //顶部导航栏
     implementation 'com.android.support:design:26.1.0'
+    //banner轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
 
 }
 

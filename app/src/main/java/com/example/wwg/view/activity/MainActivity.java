@@ -133,15 +133,15 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     private void initRadioButtonImageSize() {
         //定义底部标签图片大小
         Drawable drawableFirst = getResources().getDrawable(R.drawable.buttom_but_recommend_back);
-        drawableFirst.setBounds(0, 0, 69, 69);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        drawableFirst.setBounds(0, 0, 72, 72);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
         rb_recommend.setCompoundDrawables(null, drawableFirst, null, null);//只放上面
 
         Drawable drawableSearch = getResources().getDrawable(R.drawable.buttom_but_article_back);
-        drawableSearch.setBounds(0, 0, 69, 69);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        drawableSearch.setBounds(0, 0, 72, 72);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
         rb_article.setCompoundDrawables(null, drawableSearch, null, null);//只放上面
 
         Drawable drawableMe = getResources().getDrawable(R.drawable.buttom_but_video_back);
-        drawableMe.setBounds(0, 0, 69, 69);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
+        drawableMe.setBounds(0, 0, 72, 72);//第一0是距左右边距离，第二0是距上下边距离，第三69长度,第四宽度
         rb_video.setCompoundDrawables(null, drawableMe, null, null);//只放上面
     }
 
